@@ -51,7 +51,6 @@ class App extends React.Component {
       });
     }
 
-    // eslint-disable-next-line
     render() {
         return (
             <div>
