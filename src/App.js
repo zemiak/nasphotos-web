@@ -4,12 +4,14 @@ import Lightbox from 'react-images';
 
 const _PHOTOS = [
     { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2024.JPG', width: 4, height: 3 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2039.JPG', width: 1, height: 1 },
+    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2039.JPG', width: 3, height: 4 },
     { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2075.JPG', width: 3, height: 4 },
+
     { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2090.JPG', width: 3, height: 4 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2115.JPG', width: 3, height: 4 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2125.JPG', width: 4, height: 3 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FP1040215.JPG', width: 3, height: 4 },
+    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2115.JPG', width: 4, height: 3 },
+    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2125.JPG', width: 3, height: 4 },
+
+    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FP1040215.JPG', width: 4, height: 3 },
     { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FP1040228.JPG', width: 4, height: 3 },
     { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_0672.JPG', width: 4, height: 3 }
 ];
