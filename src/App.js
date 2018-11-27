@@ -1,21 +1,7 @@
 import React from 'react';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
-
-const _PHOTOS = [
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2024.JPG', width: 4, height: 3 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2039.JPG', width: 3, height: 4 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2075.JPG', width: 3, height: 4 },
-
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2090.JPG', width: 3, height: 4 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2115.JPG', width: 4, height: 3 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_2125.JPG', width: 3, height: 4 },
-
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FP1040215.JPG', width: 4, height: 3 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FP1040228.JPG', width: 4, height: 3 },
-    { src: 'http://lenovo-server.local:8081/nasphotos/rest/files?path=2013%2F1301+Deti%2FIMG_0672.JPG', width: 4, height: 3 }
-];
-
+import Config from './Config.js';
 
 class App extends React.Component {
     constructor() {
@@ -24,6 +10,7 @@ class App extends React.Component {
         this.openImageOrFolder = this.openImageOrFolder.bind(this);
         this.gotoNext = this.gotoNext.bind(this);
         this.gotoPrevious = this.gotoPrevious.bind(this);
+        this.config = new Config();
 
         this.state = {
             photos: [],
@@ -77,9 +64,13 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({
-            photos: _PHOTOS,
-        });
+        this.fetchRootFolders();
+    }
+
+    fetchRootFolders() {
+        fetch(this.config.getFolderUrl(this.config.getRootFolderId()))
+            .then(value => value.json())
+            .then(value => this.setState({photos: value.items,}));
     }
 }
 
